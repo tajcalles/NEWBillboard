@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_board
   # GET /artists
   # GET /artists.json
   def index
@@ -67,6 +67,9 @@ class ArtistsController < ApplicationController
       @artist = Artist.find(params[:id])
     end
 
+    def set_board
+      @board= Board.find(params[:board_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
       params.require(:artist).permit(:name, :age)
