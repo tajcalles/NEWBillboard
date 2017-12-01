@@ -1,5 +1,3 @@
-
-
 ActiveRecord::Schema.define(version: 20171130213815) do
 
   enable_extension "plpgsql"
