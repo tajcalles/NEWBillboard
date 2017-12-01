@@ -3,7 +3,8 @@
 <style>
   @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 </style>
-<h1 class="ui header">Boards</h1>
+
+<h1 class="ui header center aligned" id="headline">BillBoard&trade; Top Charts</h1>
 <br />
 <div class="ui divider"></div>
 
@@ -11,8 +12,11 @@
   <% @boards.each do |board| %>
     <div class="sixteen wide mobile eight wide tablet four wide computer column">
       <div class="ui card">
-
         <div class="content">
+          <div class="meta">
+            <span>As of 11/30/17</span>
+            <a>Test</a>
+          </div>
           <%= link_to "#{board.name} #{board.rank}", board, class: "header" %>
         </div>
         <div class="extra content">
@@ -29,9 +33,9 @@
     </div>
   <% end %>
 </div>
+
 <div class="ui divider"></div>
-
-
 <br>
-
-<%= link_to 'New Board', new_board_path %>
+<button class="ui basic button" id="new-chart-butter">
+  <%= link_to 'New Board', new_board_path %>
+  </button>
