@@ -1,20 +1,21 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: [:show, :edit, :update, :destroy]
+  before_action :set_billboard
 
   # GET /songs
   # GET /songs.json
   def index
     @songs = Song.all
+    @songs = @billboard.songs.all
   end
 
   # GET /songs/1
   # GET /songs/1.json
   def show
+    @song = Song.find(params[:id])
   end
 
   # GET /songs/new
   def new
-    @song = Song.new
   end
 
   # GET /songs/1/edit
@@ -67,6 +68,9 @@ class SongsController < ApplicationController
       @song = Song.find(params[:id])
     end
 
+    def set_billboard
+      @billboard = Billboard.find(params[:billboard_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
       params.require(:song).permit(:name, :genre, :duration, :album)

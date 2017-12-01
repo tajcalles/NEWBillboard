@@ -1,3 +1,7 @@
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+</style>
+
 <%= form_with(model: board, local: true) do |form| %>
   <% if board.errors.any? %>
     <div id="error_explanation">
@@ -11,8 +15,9 @@
     </div>
   <% end %>
   <style>
-  @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+    @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
   </style>
+  
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :board_name %>

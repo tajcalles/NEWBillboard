@@ -1,4 +1,4 @@
 class Board < ApplicationRecord
-  has_many :artists
+  validates :name, presence: true
   has_many :songs
 end
